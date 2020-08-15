@@ -1,0 +1,24 @@
+        <nav id="mainNav">
+           <div id="mainNavContent">
+               <h1>Clima Brasil</h1>
+           </div>
+        </nav>
+        <nav id="subNav"></nav>
+        <form action="/request" id="mainForm" method="POST"><br>
+                <h3>Digite os dados da sua cidade e estado</h3>
+                <select name="state" id="state" onchange="populateCityField()">
+                  {{#each states.estados}}
+                    <option value={{sigla}}>{{nome}}</option>
+                  {{/each}}
+                </select>
+               <select name="city" id="city">
+                 
+               </select>
+             <div class="form-footer">
+                <button>Conteudo</button>
+            </div> 
+            {{#if data}}
+            <h4>{{data.main.temp}}</h4>
+            {{/if}}
+        </form>
+       
