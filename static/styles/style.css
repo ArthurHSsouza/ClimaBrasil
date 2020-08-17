@@ -2,6 +2,11 @@ body{
     margin: 0 auto;
     background-color: rgb(115, 190, 233);
 }
+img{
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+}
 
 #mainNav{
     background-color: rgb(64, 137, 197);
@@ -74,7 +79,7 @@ body{
     justify-items: center;
     margin:  2rem;
     width: 70vw;
-    height: 40vh;
+    height: 60vh;
     
     border-radius: 0.8rem;
     margin-bottom: 2rem;
@@ -84,10 +89,11 @@ body{
 #results header{
 
     width: 100%;
-    height: 20%;
+    height: 30%;
     border-top-right-radius: 0.8rem;
     border-top-left-radius: 0.8rem;
     background: rgb(64, 137, 197);
+    display: flex;
 }
 
 #results header h2{
@@ -131,12 +137,9 @@ body{
     }
     #results{
         width: 35vw;
-        height: 50vh;
+        height: 55vh;
         margin: 2rem;
-        margin-top: 8%;
-    }
-    #results header{
-        margin-top: -8.1%;
+        margin-top: 2rem;
     }
 
 }

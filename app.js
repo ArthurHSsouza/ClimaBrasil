@@ -1,16 +1,16 @@
 const express = require('express');
-const handlebars= require('express-handlebars');
 const request = require('request');
 const app = express();
 
-
+//ejs
+app.set('view engine','ejs')
 
 //body parser config
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname+'/static'))
 
-const APIKey = 'ebcb8f17';
+const APIKey = '7aa01c01';
 
 //routes
 app.get('/',(req,res)=>{
@@ -18,7 +18,8 @@ app.get('/',(req,res)=>{
 });
 
 app.post('/request',(req,res)=>{
-    var {state, city} = req.body;
+    let {state, city} = req.body;
+    let originalCity = city;
     city = city.replace(/[ÀÁÂÃ]/g,"a");
     city = city.replace(/[àáâã]/g,"a");
     city = city.replace(/[ÈÉÊ]/g,"e");
@@ -29,16 +30,14 @@ app.post('/request',(req,res)=>{
     request(`https://api.hgbrasil.com/weather?key=${APIKey}&city_name=${city},${state}`,(err, response, body)=>{
       
     if(err){
+        console.log(err)
         }else{
             const data = JSON.parse(body)
             console.log(data)
-            res.render('index',{data: data.results})
+            res.render('index',{data: data.results, city: originalCity})
+            
         }
     })
 })
-
-app.engine('handlebars', handlebars({defaultLayout: "main"}));
-app.set('view engine','handlebars');
-
 
 app.listen(8080);

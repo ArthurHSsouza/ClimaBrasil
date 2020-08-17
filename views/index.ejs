@@ -1,0 +1,78 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Clima Brasil</title>
+          <link rel="stylesheet" href="/styles/style.css">
+          <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Pacifico&family=Varela+Round&display=swap" rel="stylesheet">
+        </head>
+        <body onload="populateStateField(); populateCityField();">
+           <nav id="mainNav">
+           <div id="mainNavContent">
+               <h1>Clima Brasil</h1>
+           </div>
+        </nav>
+        <nav id="subNav"></nav>
+        <div id="content">
+        <form action="/request" id="mainForm" method="POST"><br>
+                <h3>Indique a localização desejada</h3>
+                <select name="state" id="state"
+                onchange="populateCityField()">
+                </select>
+               <select name="city" id="city">
+               </select>
+             <div class="form-footer">
+                <button>Consultar</button>
+            </div> 
+        </form>
+        <%var data%> 
+        <%if(data && data.sunset != ""){%> 
+        <div id="results">
+          <header>
+            <h2><%=city%> </h2>
+            <h2><%=data.temp%> °Celsius</h2>
+          </header>
+          <div id="results-items">
+            <h2><%= data.date%></h2>
+            <h2><%= data.time%></h2>
+             <%if(data.description == "Tempo nublado" || data.description == "Parcialmente nublado"){%> 
+                 <h2><img src="/images/nublado.png" alt="dia"><%= data.description%></h2>
+               <%}else{%>
+                   <%if(data.description == "Tempestades"){ %>
+                    <h2><img src="/images/tempestade.png" alt="dia"><%= data.description%></h2>
+                    <% }else{%>  
+                      <% if(data.description == "Ensolarado"){  %> 
+                      <h2><img src="/images/dia.png" alt="dia"><%= data.description%></h2>
+                    <% }else{ %>
+                      <h2><%= data.description%></h2>
+                    <%} %>   
+                  <%} %>  
+                <% } %> 
+             <%if(data.currently == "dia"){%> 
+             <h2><img src="/images/dia.png" alt="dia"><%=data.currently %></h2>
+            <%}else{%>
+              <h2><img src="/images/noite.png" alt="dia"><%=data.currently %></h2>
+            <%} %>  
+            <h2>Vel. do vento: <%= data.wind_speedy%> </h2>
+            <h2>Nascer do sol: <%= data.sunrise%> <br><br>
+                Por do sol:    <%= data.sunset%> 
+            </h2>
+          </div>
+        </div>
+      <%}else{%>
+        <div id="results">
+          <header>
+            <h2>Desculpe, não possuímos dados desta cidade :(</h2>
+          </header>
+        </div>
+      </div>
+    <%}%> 
+        </body>
+        </html>
+        <script src="states.js"></script>
+        <script src="funcs.js"></script>
+        
+        
+       
+       
