@@ -1,9 +1,7 @@
 const express = require('express');
 const handlebars= require('express-handlebars');
 const request = require('request');
-const { json } = require('express');
 const app = express();
-const statesJson = require('./statesData.json')
 
 
 
@@ -16,7 +14,7 @@ const APIKey = 'ebcb8f17';
 
 //routes
 app.get('/',(req,res)=>{
-    res.render('index',{states: statesJson});
+    res.render('index');
 });
 
 app.post('/request',(req,res)=>{
@@ -31,11 +29,10 @@ app.post('/request',(req,res)=>{
     request(`https://api.hgbrasil.com/weather?key=${APIKey}&city_name=${city},${state}`,(err, response, body)=>{
       
     if(err){
-
         }else{
-            const result = JSON.parse(body)
-            console.log(result)
-            res.render('index',{data: result,states: statesJson})
+            const data = JSON.parse(body)
+            console.log(data)
+            res.render('index',{data: data.results})
         }
     })
 })

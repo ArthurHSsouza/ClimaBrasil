@@ -26,21 +26,22 @@ body{
     background-color: azure;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 1rem 2rem;
+    /*padding-left: 2rem;
+    padding-right: 2rem;*/
 }
 
 #mainForm  h3{
-    display: flex;
     font-family: 'Varela Round';
     color: rgb(53, 53, 61);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
      
 }
 
 #mainForm  select{
    width: 100%;
-   margin-bottom: 1rem;
-   height: 2.3rem;
+   margin-bottom: 1.5rem;
+   height: 2.5rem;
    border-radius: 0.8rem;
    border: none;
    background-color: rgb(224, 224, 224);
@@ -68,22 +69,74 @@ body{
    
 }
 
+#results{
+    align-content: center;
+    justify-items: center;
+    margin:  2rem;
+    width: 70vw;
+    height: 40vh;
+    
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+    background: azure;
+   
+}
+#results header{
+
+    width: 100%;
+    height: 20%;
+    border-top-right-radius: 0.8rem;
+    border-top-left-radius: 0.8rem;
+    background: rgb(64, 137, 197);
+}
+
+#results header h2{
+    padding: 1rem;
+    color: white;
+    font: 500 1.5rem 'Varela Round';
+}
+
+#results #results-items h2{
+    font: 500 1rem 'Varela Round';
+}
+
+#results #results-items{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 1.2rem;
+}
 
 @media(min-width: 700px){
-    #mainForm{
-        border-radius: 0.8rem;
-        margin: 2rem auto;
-        width: 60vw;
-        height: 400px;
-        background-color: azure;
-        align-items: center;
-        justify-content: center;
+ 
+    #content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
     }
-    #mainForm input{
-        height: 3rem;
+    #mainForm{
+        width: 40vw;
+        height: 50vh;
+    }
+    #mainForm select{
+        height: 3.3rem;
+    }
+    #mainForm .form-footer{
+        padding-top: 2rem;
     }
     #mainForm button{
         width:  10rem;
         height: 2.5rem;
     }
+    #results{
+        width: 35vw;
+        height: 50vh;
+        margin: 2rem;
+        margin-top: 8%;
+    }
+    #results header{
+        margin-top: -8.1%;
+    }
+
 }

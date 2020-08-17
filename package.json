@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Site ClimaBrasil, para consultar o clima de todo o Brasil",
+  "main": "index.js",
+  "repository": "https://github.com/ArthurHSsouza/ClimaBrasil.git",
+  "author": "ArthurHSsouza <g.ahss1980@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "request": "^2.88.2"
+  }
+}

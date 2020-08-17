@@ -1,4 +1,4 @@
-var states = {
+const states = {
     estados: [
       {
         "sigla": "AC",
