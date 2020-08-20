@@ -110,7 +110,7 @@ img{
     padding: 1rem;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-column-gap: 1.2rem;
 }
 
@@ -123,7 +123,8 @@ img{
     }
     #mainForm{
         width: 40vw;
-        height: 50vh;
+        height: 60vh;
+        margin-top: 3.5rem;
     }
     #mainForm select{
         height: 3.3rem;
@@ -136,10 +137,10 @@ img{
         height: 2.5rem;
     }
     #results{
+      
         width: 35vw;
-        height: 55vh;
-        margin: 2rem;
-        margin-top: 2rem;
+        height: 60vh;
+        margin-top: 3.5rem;
     }
 
 }
