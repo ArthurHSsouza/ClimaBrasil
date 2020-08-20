@@ -24,7 +24,6 @@ Site que fornece as principais informações climáticas para as cidades brasile
  
  #####Versão mobile do site
  
- 
-    ![interface](https://i.ibb.co/khHm39S/2020-08-19-4.png)
+   ![interface](https://i.ibb.co/khHm39S/2020-08-19-4.png)
  
  
