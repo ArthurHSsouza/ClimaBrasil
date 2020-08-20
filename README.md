@@ -16,12 +16,11 @@ Site que fornece as principais informações climáticas para as cidades brasile
 
  - api.hgbrasil.com
  
- 
  Interface do site, nela, os dados são inseridos no formulário na direita e as informações sobre a cidade selecionada são mostradas na direita.
- ![interface](https://i.ibb.co/qBkYVYZ/2020-08-19-2.png)
+   ![interface](https://i.ibb.co/qBkYVYZ/2020-08-19-2.png)
  
  
-Versão mobile do site
- ![interface](https://i.ibb.co/khHm39S/2020-08-19-4.png)
+ Versão mobile do site
+    ![interface](https://i.ibb.co/khHm39S/2020-08-19-4.png)
  
  
